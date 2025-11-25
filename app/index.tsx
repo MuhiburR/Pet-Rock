@@ -52,12 +52,22 @@ export default function PetRockSimulator() {
     // --- Passive Hunger Draining Over Time ---
 
     useEffect(() => {
-      const internval = setInterval(() => {
+      const interval = setInterval(() => {
         setHunger(prev => Math.max(0, prev-2)); // decrease by intervals of 2s
       }, 2000);
 
-      return () => clearInterval(internval);
+      return () => clearInterval(interval);
     }, []);
+
+    // --- Passive Happiness loss when hunger is low ---
+    useEffect(() => {
+      if(hunger <= 30) {
+        const interval = setInterval(() => {
+          setHappiness(prev => Math.max(0, prev - (hunger < 20 ? 10 : 2)));
+        }, 2000);
+        return () => clearInterval(interval);
+      }
+    }, [hunger]);
 
     return (
         <View style={styles.container}>
