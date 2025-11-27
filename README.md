@@ -51,7 +51,7 @@ Since then, I’ve been iterating on it to:
 
 I plan to deploy this project via **Netlify**, so that anyone can play with Rocko directly in the browser — without needing Expo Go or a simulator.
 
-[Pet Rocko](petrocko.netlify.app)
+[Pet Rocko](https://petrocko.netlify.app)
 
 ---
 
